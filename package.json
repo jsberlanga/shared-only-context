@@ -1,16 +1,26 @@
 {
-  "name": "@juliosoto/shared-bella-context",
-  "version": "1.0.0",
-  "main": "src/index.ts",
+  "name": "@julio-soto/shared-bella-context",
+  "version": "1.0.1",
   "license": "MIT",
-  "dependencies": {
-    "react": "^17.0.2"
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependencies": {
+    "react": "~17.0.1"
   },
   "devDependencies": {
     "@types/react": "^17.0.11"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prebuild": "rm -rf dist",
+    "compile": "tsc",
+    "build": "yarn run prebuild && yarn run compile"
   },
   "repository": {
     "type": "git",
